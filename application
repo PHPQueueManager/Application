@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . "vendor/autoload.php";
+const ROOT_DIR = __DIR__ . DIRECTORY_SEPARATOR;
+const APP_DIR = ROOT_DIR . "App" . DIRECTORY_SEPARATOR;
+const SYS_DIR = ROOT_DIR . "Sys" . DIRECTORY_SEPARATOR;
+
+try {
+    $application = new \Sys\Application();
+    $application->boot()
+        ->run();
+} catch (Throwable $e) {
+    echo $e->getMessage() . '[' . $e->getFile() . ':' . $e->getLine() . ']';
+}

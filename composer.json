@@ -1,0 +1,26 @@
+{
+    "name": "phpqueuemanager/application",
+    "description": "PHP Work Queue Application",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "Sys\\": "Sys/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Muhammet ŞAFAK",
+            "email": "info@muhammetsafak.com.tr",
+            "role": "Developer",
+            "homepage": "https://www.muhammetsafak.com.tr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1",
+        "phpqueuemanager/php-queue-manager": "*",
+        "symfony/console": "^6.4"
+    }
+}
