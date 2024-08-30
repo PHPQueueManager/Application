@@ -2,6 +2,8 @@
 
 namespace Sys;
 
+use Symfony\Component\Dotenv\Dotenv;
+
 class Application
 {
     public function __construct()
@@ -10,6 +12,8 @@ class Application
 
     public function boot(): self
     {
+        is_file(ROOT_DIR . '.env') && (new Dotenv())->load(ROOT_DIR . '.env');
+
         $helpers = glob(APP_DIR . "Helpers/*.php");
         foreach ($helpers as $helper) {
             if (file_exists($helper)) {

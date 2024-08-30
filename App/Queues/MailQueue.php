@@ -11,11 +11,12 @@ class MailQueue extends Queue
     public function __construct()
     {
         $adapter = AdapterFactory::create('rabbitmq', [
-            'host'          => 'localhost',
-            'port'          => 5672,
-            'username'      => 'guest',
-            'password'      => 'guest',
+            'host'          => env("RABBITMQ_HOST", "localhost"),
+            'port'          => env("RABBITMQ_PORT", 5672),
+            'username'      => env("RABBITMQ_USER", "guest"),
+            'password'      => env("RABBITMQ_PASS", "guest"),
         ]);
+
         parent::__construct($adapter);
     }
 
