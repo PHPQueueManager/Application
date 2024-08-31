@@ -1,6 +1,6 @@
 # PHP Queue Manager
 
-This application was created to easily create and manage your own job queues.
+This application was created to easily create and manage your own job queues. This implementation is based on [PHPQueueManager](https://github.com/PHPQueueManager/PHPQueueManager) library. It aims to abstract away queuing mechanisms and message workers.
 
 ```
 composer create-project phpqueuemanager/application
@@ -57,4 +57,4 @@ Generally speaking, you should fork this repository, make changes in your own fo
 
 ## License
 
-Copyright &copy; 2022 [MIT License](./LICENSE)
+Copyright &copy; 2024 [MIT License](./LICENSE)
