@@ -5,6 +5,16 @@ This application was created to easily create and manage your own job queues. Th
 ```
 composer create-project phpqueuemanager/application
 ```
+
+## Why should I use it?
+
+- This application provides tremendous flexibility in scaling.
+- It can work with different queue mechanisms and different connections at the same time.
+- There can be different workers and consumers processing a single queue.
+- Advanced error and data management support.
+
+## Starting
+
 Check out the sample template under the "App" directory before you start developing! And then when you are ready to develop your own app you can execute the following command to **destroy everything in the "App" directory**.
 
 ```

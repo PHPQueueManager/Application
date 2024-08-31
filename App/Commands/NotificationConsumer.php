@@ -1,16 +1,15 @@
 <?php
-namespace App\Commands\Mail;
-
+namespace App\Commands;
 use App\Queues\NotificationQueue;
 use PHPQueueManager\PHPQueueManager\Queue\MessageInterface;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
+use \Symfony\Component\Console\Input\InputInterface;
+use \Symfony\Component\Console\Output\OutputInterface;
+use \Symfony\Component\Console\Command\Command;
 
-class MailConsumer extends Command
+class NotificationConsumer extends Command
 {
 
-    protected static $defaultName = "consume:mail";
+    protected static $defaultName = "consume:notification";
 
     public function execute(InputInterface $input, OutputInterface $output): int
     {
@@ -27,7 +26,7 @@ class MailConsumer extends Command
 
     public function configure(): void
     {
-        $this->setDescription("Sends the emails in the queue.");
+        $this->setDescription("");
     }
 
 }

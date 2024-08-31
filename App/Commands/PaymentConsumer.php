@@ -1,5 +1,5 @@
 <?php
-namespace App\Commands\Payments;
+namespace App\Commands;
 use App\Queues\PaymentQueue;
 use PHPQueueManager\PHPQueueManager\Queue\MessageInterface;
 use Symfony\Component\Console\Command\Command;
