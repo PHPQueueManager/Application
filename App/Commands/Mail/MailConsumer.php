@@ -1,11 +1,11 @@
 <?php
-namespace App\Commands;
+namespace App\Commands\Mail;
 
-use App\Queues\MailQueue;
+use App\Queues\NotificationQueue;
 use PHPQueueManager\PHPQueueManager\Queue\MessageInterface;
-use \Symfony\Component\Console\Input\InputInterface;
-use \Symfony\Component\Console\Output\OutputInterface;
-use \Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class MailConsumer extends Command
 {
@@ -14,17 +14,12 @@ class MailConsumer extends Command
 
     public function execute(InputInterface $input, OutputInterface $output): int
     {
-        $queue = new MailQueue();
+        $queue = new NotificationQueue();
 
         $queue->consume(function (MessageInterface $message) {
-            $payload = $message->getPayload();
-            if (filter_var($payload['to_mail'], FILTER_VALIDATE_EMAIL)) {
-                sleep(2);
+            // The workers that will work for NotificationQueue are defined in Message.
 
-                return true;
-            }
-
-            return false;
+            return true;
         });
 
         return Command::SUCCESS;

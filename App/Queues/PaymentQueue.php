@@ -5,7 +5,7 @@ namespace App\Queues;
 use PHPQueueManager\PHPQueueManager\Adapters\AdapterFactory;
 use PHPQueueManager\PHPQueueManager\Queue\Queue;
 
-class MailQueue extends Queue
+class PaymentQueue extends Queue
 {
 
     public function __construct()
@@ -22,12 +22,12 @@ class MailQueue extends Queue
 
     public function getName(): string
     {
-        return 'mail_queue';
+        return 'payment_queue';
     }
 
     public function getDLQName(): string
     {
-        return 'mail_queue_dead_letter_queue';
+        return 'payment_queue_dead_letter_queue';
     }
 
 }

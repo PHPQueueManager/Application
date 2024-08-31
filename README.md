@@ -5,6 +5,27 @@ This application was created to easily create and manage your own job queues.
 ```
 composer create-project phpqueuemanager/application
 ```
+Check out the sample template under the "App" directory before you start developing! And then when you are ready to develop your own app you can execute the following command to **destroy everything in the "App" directory**.
+
+```
+php qmanager app:truncate
+```
+
+You will also need plugins appropriate for the AMQP system you use.
+
+#### RabbitMQ
+
+- [https://pecl.php.net/package/amqp](https://pecl.php.net/package/amqp)
+- Include the `php-amqplib/php-amqplib` package in your project.
+
+```
+composer require php-amqplib/php-amqplib
+```
+
+#### Kafka
+
+- [https://pecl.php.net/package/rdkafka](https://pecl.php.net/package/rdkafka)
+- [php.net Documentation](https://arnaud.le-blanc.net/php-rdkafka-doc/phpdoc/rdkafka.setup.html)
 
 
 ## Getting Help

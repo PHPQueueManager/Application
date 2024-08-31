@@ -5,6 +5,10 @@ const ROOT_DIR = __DIR__ . DIRECTORY_SEPARATOR;
 const APP_DIR = ROOT_DIR . "App" . DIRECTORY_SEPARATOR;
 const SYS_DIR = ROOT_DIR . "Sys" . DIRECTORY_SEPARATOR;
 
+const APP_NAME = "PHP Queue Manager CLI Application";
+
+const APP_VERSION = "0.0.2";
+
 try {
     $application = new \Sys\Application();
     $application->boot()
